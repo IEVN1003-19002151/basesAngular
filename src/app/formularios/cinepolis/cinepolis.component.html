@@ -1,20 +1,55 @@
-<div>
-    <h1>Cinepolis</h1>
-   <div>
-    <h5>Entradas</h5>
-    <label for="">nombre</label>
-    <input formControlName="numero1" type="text">
-    <br>
-    <label for="">Ciudad compradores</label>
-    <input formControlName="numero1" type="text">
-    <br>
-    <label for="">Tarjeta cinco</label>
-    <input formControlName="numero1" type="radio">
-    <input formControlName="numero1" type="radio">
-    <br>
-    <label for="">Cantidad de Boletos</label>
-    <input formControlName="numero1" type="number">
-   </div>
-    
-    
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="cinepolis-container">
+                <div class="header">
+                    <h1>Cinépolis</h1>
+                </div>
+
+                <div class="entradas-section">
+                    <h2>Entradas</h2>
+
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input [(ngModel)]="nombre" type="text" class="form-control" placeholder="Ingrese su nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cantidad Compradores:</label>
+                        <input [(ngModel)]="cantidadCompradores" type="number" min="1" class="form-control" placeholder="Ingrese la cantidad de compradores" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tarjeta Cineco:</label>
+                        <div class="radio-group">
+                            <input type="radio" [(ngModel)]="tieneTarjetaCineco" [value]="true" id="cineco-si">
+                            <label for="cineco-si">Sí</label>
+
+                            <input type="radio" [(ngModel)]="tieneTarjetaCineco" [value]="false" id="cineco-no" checked>
+                            <label for="cineco-no">No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cantidad de Boletos:</label>
+                        <input [(ngModel)]="cantidadBoletos" type="number" min="1" class="form-control" placeholder="Ingrese la cantidad de boletos" required>
+                    </div>
+                </div>
+
+                <div class="acciones-section">
+                    <button class="btn btn-primary" (click)="calcularTotal()">Comprar</button>
+                    <button class="btn btn-secondary" (click)="limpiar()">Borrar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="detalles-section" *ngIf="mostrarDetalles">
+                <h2>Ticket de compra</h2>
+                <div class="info-box">
+                    <pre>{{ detallesCompra }}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

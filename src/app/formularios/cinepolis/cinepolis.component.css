@@ -1,0 +1,112 @@
+.cinepolis-container {
+    background-color: rgba(0, 90, 180, 0.9); 
+    color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 10px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #ffffff; 
+    margin: 0;
+    padding: 10px 0;
+}
+
+h2 {
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 18px;
+    display: block;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #00aaff;
+    box-shadow: 0px 0px 5px #00aaff; 
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.acciones-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #ffd60a; 
+    color: #003366; 
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+    background-color: #caa900; 
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: #e74c3c;
+    color: white;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary:hover {
+    background-color: #c0392b;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+.detalles-section {
+    background-color: #005ab4; 
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.info-box {
+    background-color: #ffffff; 
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
