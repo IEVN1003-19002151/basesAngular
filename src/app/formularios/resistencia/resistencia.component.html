@@ -1,3 +1,67 @@
-<div>
-<h1>Hola terricolas</h1>
+<div class="container">
+  <h2>Calculadora de Resistencias</h2>
+
+  <form [formGroup]="resistenciaForm">
+    <div class="bandas">
+      <div class="banda">
+        <label>Primera Banda</label>
+        <select formControlName="PrimeraBanda">
+          <option *ngFor="let color of colorColores | keyvalue" [value]="color.key">{{ color.key }}</option>
+        </select>
+      </div>
+      <!-- ---------------------------------------------------------------------------- -->
+      <div class="banda">
+        <label>Segunda Banda</label>
+        <select formControlName="SegundaBanda">
+          <option *ngFor="let color of colorColores | keyvalue" [value]="color.key">{{ color.key }}</option>
+        </select>
+      </div>
+      <!-- -------------------------------------------------------------------------------------- -->
+      <div class="banda">
+        <label>Tercera Banda</label>
+        <select formControlName="TerceraBanda">
+          <option *ngFor="let multiplicar of multiplicarValores | keyvalue" [value]="multiplicar.key">{{ multiplicar.key }}</option>
+        </select>
+      </div>
+    </div>
+      <!-- -------------------------------------------------------------------------------------- -->
+    <div class="tolerancia">
+      <label>Tolerancia</label>
+      <div>
+        <input type="radio" id="oro" formControlName="Tolerancia" value="Oro">
+        <label for="oro">Oro</label>
+      </div>
+      <div>
+        <input type="radio" id="plata" formControlName="Tolerancia" value="Plata">
+        <label for="plata">Plata</label>
+      </div>
+    </div>
+      <!-- -------------------------------------------------------------------------------------- -->
+    <button type="button" (click)="calcularResistencia()">Calcular</button>
+  </form>
+      <!-- -------------------------------------------------------------------------------------- -->
+  <table *ngIf="resistenciaValor">
+    <thead>
+      <tr>
+        <th>Color 1</th>
+        <th>Color 2</th>
+        <th>Color 3</th>
+        <th>Tolerancia</th>
+        <th>Valor</th>
+        <th>Valor Máximo</th>
+        <th>Valor Mínimo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td [ngClass]="getColorClass(resistenciaForm.value.PrimeraBanda)">{{ resistenciaForm.value.PrimeraBanda }}</td>
+        <td [ngClass]="getColorClass(resistenciaForm.value.SegundaBanda)">{{ resistenciaForm.value.SegundaBanda }}</td>
+        <td [ngClass]="getColorClass(resistenciaForm.value.TerceraBanda)">{{ resistenciaForm.value.TerceraBanda }}</td>
+        <td [ngClass]="getColorClass(resistenciaForm.value.Tolerancia)">{{ resistenciaForm.value.Tolerancia }}</td>
+        <td>{{ resistenciaValor }} </td>
+        <td>{{ resistenciaMax }} </td>
+        <td>{{ resistenciaMin }} </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
